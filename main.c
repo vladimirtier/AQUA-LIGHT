@@ -101,6 +101,9 @@ void time_anzeige (){
 	lcd_puts(string);
 
 }
+
+
+//*************Main Funktion****************//
 int main(void)
 {
 	//DDRB = 0xF8;
@@ -192,7 +195,7 @@ int main(void)
 		else if(time[1] >= 0 && time[1] < 1){ // 22.00 to 06.00
 			OCR0  = 253;
 			OCR1A = 253;
-			OCR2  = 190;
+			OCR2  = 180;
 		}
 
 	}
