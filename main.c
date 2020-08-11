@@ -3,7 +3,7 @@
 #include "main_init.h"
 #include "lcd.h"
 #include "ds3231.h"
-int h, i, b, d,m,y, w, zeit;
+int h, i, b, d, m, y, w, zeit; // h - hour, b - minuts variable, d - day, m - month, y -year, w - week
 BYTE time[3] = {0};
 BYTE data[4] = {0};
 BYTE string[20] = {0};
@@ -11,7 +11,8 @@ SBYTE temperatura = 0;
 
 // ----- Timer setting ----- //
 void zeit_einstellung(void){
-	while (PINB&0x10){               // When button PIN 4 is pressed, the loop pause is started to set time. Button must be printed at setting.
+	
+       while (PINB&0x10){               // When button PIN 4 is pressed, the loop pause is started to set time. Button must be printed at setting.
 		if(PINB&0x40){               // When button PIN 6 is pressed, counts hour
 			for (i=0; i<1; i++){
 				h++;
